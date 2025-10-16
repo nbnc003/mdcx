@@ -13,7 +13,7 @@ MDCx 现在支持使用 Ollama 本地大模型进行翻译，这为用户提供�
 
 ### 2. Ollama 配置选项
 - **Ollama API Host**: Ollama 服务地址（默认：http://localhost:11434）
-- **Ollama 模型名称**: 要使用的模型名称（默认：qwen2.5:7b）
+- **Ollama 模型名称**: 要使用的模型名称（默认：qwen3:8b）
 - **Ollama 提示词**: 翻译提示词模板（支持 {content} 和 {lang} 占位符）
 - **Ollama 读取超时**: 请求超时时间（默认：120秒）
 - **Ollama 每秒最大请求数**: 限流设置（默认：0.5）
@@ -38,9 +38,10 @@ ollama serve
 
 ```bash
 # 下载中文支持较好的模型（推荐）
-ollama pull qwen2.5:7b
+ollama pull qwen3:8b
 
 # 或者下载其他模型
+ollama pull qwen2.5:7b
 ollama pull llama3.2:3b
 ollama pull gemma2:9b
 ```
@@ -67,15 +68,15 @@ python test_ollama_translation.py
 
 ### 中文翻译推荐模型
 
-1. **qwen2.5:7b** - 阿里通义千问，中文支持优秀
-2. **qwen2.5:14b** - 更大版本，翻译质量更高
+1. **qwen3:8b** - 阿里通义千问3，中文支持优秀
+2. **qwen2.5:7b** - 阿里通义千问2.5，中文支持优秀
 3. **llama3.2:3b** - Meta 模型，多语言支持
 4. **gemma2:9b** - Google 模型，翻译质量好
 
 ### 模型选择建议
 
-- **性能优先**: qwen2.5:7b, llama3.2:3b
-- **质量优先**: qwen2.5:14b, gemma2:9b
+- **性能优先**: qwen3:8b, qwen2.5:7b, llama3.2:3b
+- **质量优先**: qwen3:8b, gemma2:9b
 - **资源受限**: qwen2.5:1.5b, llama3.2:1b
 
 ## 优势特点
@@ -122,7 +123,7 @@ python test_ollama_translation.py
 
 ```bash
 # 测试模型是否工作
-ollama run qwen2.5:7b "请翻译：Hello World"
+ollama run qwen3:8b "请翻译：Hello World"
 ```
 
 ## 技术实现

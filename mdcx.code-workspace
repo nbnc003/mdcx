@@ -41,5 +41,6 @@
 			},
 			"editor.defaultFormatter": "biomejs.biome"
 		},
+		"cursorpyright.analysis.typeCheckingMode": "standard",
 	}
 }

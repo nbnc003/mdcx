@@ -74,7 +74,7 @@ class TranslateConfig(BaseModel):
     
     # Ollama 配置
     ollama_url: HttpUrl = Field(default=HttpUrl("http://localhost:11434"), title="Ollama API Host")
-    ollama_model: str = Field(default="qwen2.5:7b", title="Ollama 模型名称")
+    ollama_model: str = Field(default="qwen3:8b", title="Ollama 模型名称")
     ollama_prompt: str = Field(
         default="请将以下文本翻译为{lang}。只输出翻译结果，不要任何解释。\n{content}",
         title="Ollama 提示词",

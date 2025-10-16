@@ -30,7 +30,7 @@ class Computed:
         self.ollama_client = OllamaClient(
             base_url=config.translate_config.ollama_url.unicode_string(),
             timeout=httpx.Timeout(config.timeout, read=config.translate_config.ollama_read_timeout),
-            rate=(max(config.translate_config.ollama_max_req_sec, 0.1), max(1, 1 / config.translate_config.ollama_max_req_sec)),
+            rate=(max(config.translate_config.ollama_max_req_sec, 0.1), max(1, 1 / max(config.translate_config.ollama_max_req_sec, 0.1))),
         )
 
         self.async_client = AsyncWebClient(
